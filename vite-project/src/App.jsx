@@ -22,6 +22,9 @@ const App = () => {
     fetchApi()
   },[])
   
+  if(loading) {return <div>Data is Loading Please Wait...</div>}
+  if(errorMsg !== null) {return <div>Error, {errorMsg}</div>}
+
   return (
     <div>App</div>
   )
