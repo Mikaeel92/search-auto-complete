@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Suggestion from './Suggestion'
 
 const App = () => {
 
@@ -43,6 +44,10 @@ const App = () => {
     }
   }
 
+  const handleClick = () => {
+
+  }
+
   return (
     <div className='flex flex-col item-center justify-center h-screen w-screen bg-gray-200'>
       <input
@@ -51,7 +56,7 @@ const App = () => {
         value={searchParams}
         onChange={handleChange}
       />
-      { showDropDown && <Suggestion/> }
+      { showDropDown && <Suggestion data={filteredUsers} handleClick={handleClick}/> }
     </div>
   )
 }
