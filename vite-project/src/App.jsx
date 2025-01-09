@@ -5,6 +5,7 @@ const App = () => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState(null)
+  const [searchParams, setSearchParams] = useState('')
 
   const fetchApi = async () => {
     try {
@@ -26,7 +27,14 @@ const App = () => {
   if(errorMsg !== null) {return <div>Error, {errorMsg}</div>}
 
   return (
-    <div>App</div>
+    <div className='flex flex-col item-center justify-center h-screen w-screen bg-gray-200'>
+      <input
+        placeholder='Search Users Here...' 
+        className='p-2 bg-purple-500 text-white font-bold rounded-md w-[600px] mx-auto'
+        value={searchParams}
+        onChange={setSearchParams}
+      />
+    </div>
   )
 }
 export default App
