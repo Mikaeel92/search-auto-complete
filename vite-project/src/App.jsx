@@ -51,6 +51,7 @@ const App = () => {
         value={searchParams}
         onChange={handleChange}
       />
+      { showDropDown && <Suggestion/> }
     </div>
   )
 }
